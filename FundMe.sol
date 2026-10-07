@@ -31,5 +31,10 @@ contract FundMe{
         require(msg.sender == OwnerAddress);
         _;
     }
-
+    receive() external payable {
+        fund();
+    }
+    fallback() external payable { 
+        fund();
+    }
 }
