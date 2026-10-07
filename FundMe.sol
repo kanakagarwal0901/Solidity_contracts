@@ -6,10 +6,10 @@ import {PriceConverter} from "./PriceConverter.sol";
 
 contract FundMe{
     using PriceConverter for uint;
-    uint public MinnimumUsd = 5e18;
+    uint public constant MinnimumUsd = 5e18;
     address[] public SendersList;
     mapping(address SendersAddress => uint Value) public SendersMapping;
-    address public OwnerAddress;
+    address public immutable OwnerAddress;
     constructor(){
         msg.sender = OwnerAddress;
     }
